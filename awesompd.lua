@@ -1061,6 +1061,9 @@ function awesompd:smart_update()
       local pos = to_seconds(self.track_position)
       local dur = to_seconds(self.track_duration)
       local rem = (dur - pos) + 1
+      if (rem < 0) then
+	      rem = 0
+      end
       if (rem < self.update_interval) then
 	 -- Little time remaining, lets update when it runs out 
 	 local smart_timer = timer({ timeout = rem })
