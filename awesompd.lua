@@ -9,6 +9,8 @@ local awful = require('awful')
 local beautiful = require('beautiful')
 local naughty = require('naughty')
 local format = string.format
+local timer = timer
+pcall(function() timer = require("gears.timer") end)
 
 local module_path = (...):match ("(.+/)[^/]+$") or ""
 
